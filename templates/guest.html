@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<h2>Записи</h2>
+<form action="" method="post" class="form-contact">
+    <p><label>Ваше сообщение: </label> <input type="text" name="text" />
+        <button type="submit">Отправить</button>
+</form>
+{% for message in messages %}
+<div>{{ message.text }}</div>
+{% endfor %}
+{% endblock %}
